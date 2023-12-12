@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Makao" Height="450" Width="800">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="72" Margin="286,235,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBlock Name="hlwrd" FontSize="50"  Text="Placeholder"/>
 
     </Grid>
 </Window>
