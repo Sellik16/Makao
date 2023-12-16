@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Makao
 {
@@ -7,8 +8,9 @@ namespace Makao
         public MainWindow()
         {
             InitializeComponent();
-
-            hlwrd.Text = "Hello Word!";
+            Dobierz dobierzButton = new Dobierz(); 
+            string dobTxt = dobierzButton.Text;
+            hlwrd.Text = dobTxt;
         }
     }
 }
