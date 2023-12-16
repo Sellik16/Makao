@@ -15,7 +15,7 @@ namespace Makao
 
     public class WybierzKarte : Button
     {
-        public  WybierzKarte()
+        public WybierzKarte()
         {
             Text = "Wybierz Kartę";
         }
@@ -25,6 +25,8 @@ namespace Makao
         public Dobierz()
         {
             Text = "Dobierz Kartę";
+            
         }
     }
+
 }
