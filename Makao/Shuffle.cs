@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
-
 namespace Makao
 {
     //tzrzeba rozpisać funkcje którę
@@ -15,7 +14,7 @@ namespace Makao
         protected string? Figura { get; set; }
         protected string? Kolor { get; set; }
         protected string? Wlasciwosc { get; set; }
-        protected bool? IsWlasciwosc { get; set; }
+        protected bool? IsWlasciwosc { get; set; } = true;
         public string? PokazKolor()
         {
             return Kolor;
@@ -64,7 +63,6 @@ namespace Makao
             IdKarty = id;
             Figura = "As";
             Kolor = kolor;
-            IsWlasciwosc = true;
         }
         
 
@@ -79,7 +77,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
 
     }
@@ -93,7 +90,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
 
     }
@@ -109,7 +105,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
 
     }
@@ -123,7 +118,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
     }
     public class Dwa : Karta
@@ -136,7 +130,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
         
     }
@@ -150,7 +143,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
     }
     public class Cztery : Karta
@@ -163,7 +155,6 @@ namespace Makao
             {
                 Kolor = kolor;
             }
-            IsWlasciwosc = true;
         }
     }
     public class Niefunkcyjne : Karta
@@ -191,7 +182,6 @@ namespace Makao
         {
             Asy = new List<As>();
 
-
             int id = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -218,21 +208,15 @@ namespace Makao
                         break;
                 }
                 As nowyAs = new As(++id, kolor);
-                Asy.Add(nowyAs);
-                
-            }
-            
+                Asy.Add(nowyAs);             
+            }           
         }
-        
-
-
     }
     public class TasowanieTalii  
     {
         public TasowanieTalii()
         {
             Stack<int> stos = new Stack<int>();
-            
             
             //foreach (int karta in stos) //jeśli nie zadziała, zmienić int na var
             //{
