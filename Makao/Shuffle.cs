@@ -8,13 +8,18 @@ using System.Windows.Documents;
 
 namespace Makao
 {
+    //tzrzeba rozpisać funkcje którę
     public class Karta
     {
         protected int IdKarty { get; set; }
         protected string? Figura { get; set; }
         protected string? Kolor { get; set; }
         protected string? Wlasciwosc { get; set; }
-
+        protected bool? IsWlasciwosc { get; set; }
+        public string? PokazKolor()
+        {
+            return Kolor;
+        }
     }
     //public class Wlasciwosc
     //{
@@ -54,13 +59,12 @@ namespace Makao
     public class As : Karta
     {
         //zarządaj zmiany koloru dla kolejnego gracza
-        public As()
+        public As(int id,string? kolor)
         {
+            IdKarty = id;
             Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Kolor = kolor;
+            IsWlasciwosc = true;
         }
         
 
@@ -75,6 +79,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
 
     }
@@ -88,6 +93,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
 
     }
@@ -103,6 +109,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
 
     }
@@ -116,6 +123,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
     }
     public class Dwa : Karta
@@ -128,7 +136,9 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
+        
     }
     public class Trzy : Karta
     {
@@ -140,6 +150,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
     }
     public class Cztery : Karta
@@ -152,6 +163,7 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = true;
         }
     }
     public class Niefunkcyjne : Karta
@@ -166,16 +178,53 @@ namespace Makao
             {
                 Kolor = kolor;
             }
+            IsWlasciwosc = false;
         }
         //karty które nie mają konkretnej funkcji
         //5-10
     }
     public class Talia
     {
+        public List<As> Asy { get; private set; }
+
         public Talia()
         {
+            Asy = new List<As>();
+
+
+            int id = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                string? kolor = null;
+                switch (i)
+                {
+                    case 0:
+                        id = i;
+                        kolor = "Kier";
+                        break;
+                    case 1:
+                        id = i;
+                        kolor = "Pik";
+                        break;
+                    case 2:
+                        id = i;
+                        kolor = "Trefl";
+                        break;
+                    case 3:
+                        id = i;
+                        kolor = "Karo";
+                        break;
+                    default:
+                        break;
+                }
+                As nowyAs = new As(++id, kolor);
+                Asy.Add(nowyAs);
+                
+            }
             
         }
+        
+
 
     }
     public class TasowanieTalii  
@@ -189,6 +238,13 @@ namespace Makao
             //{
             //    
             //}
+        }
+    }
+    public class Test
+    {
+        public Test()
+        {
+            
         }
     }
 }

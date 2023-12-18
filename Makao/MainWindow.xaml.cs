@@ -8,9 +8,11 @@ namespace Makao
         public MainWindow()
         {
             InitializeComponent();
-            Dobierz dobierzButton = new Dobierz(); 
-            string dobTxt = dobierzButton.Text;
-            hlwrd.Text = dobTxt;
+            Talia talia = new Talia();
+            
+            hlwrd.Text = talia.Asy[2].PokazKolor();
+
+
         }
     }
 }
