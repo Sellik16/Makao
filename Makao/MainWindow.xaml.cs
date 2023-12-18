@@ -8,9 +8,10 @@ namespace Makao
         public MainWindow()
         {
             InitializeComponent();
-            Talia talia = new Talia();
-            
-            hlwrd.Text = talia.Asy[2].PokazKolor();
+
+            ////Wyświetlanie pierwszego asa w tali
+            //Talia talia = new Talia();
+            //hlwrd.Text = talia.Asy[0].PokazKolor();
 
 
         }

@@ -240,11 +240,4 @@ namespace Makao
             //}
         }
     }
-    public class Test
-    {
-        public Test()
-        {
-            
-        }
-    }
 }
