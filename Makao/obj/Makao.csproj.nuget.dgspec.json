@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj": {}
+    "C:\\Users\\kusel\\source\\repos\\Makao\\Makao\\Makao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj": {
+    "C:\\Users\\kusel\\source\\repos\\Makao\\Makao\\Makao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj",
+        "projectUniqueName": "C:\\Users\\kusel\\source\\repos\\Makao\\Makao\\Makao.csproj",
         "projectName": "Makao",
-        "projectPath": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj",
+        "projectPath": "C:\\Users\\kusel\\source\\repos\\Makao\\Makao\\Makao.csproj",
         "packagesPath": "C:\\Users\\kusel\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\obj\\",
         "projectStyle": "PackageReference",
