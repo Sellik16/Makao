@@ -209,16 +209,57 @@ namespace Makao
             }
         }
     }
-    public class TasowanieTalii  
+    
+    public class Stos
     {
-        public TasowanieTalii()
+        
+    }
+    public class Tasowanie
+    {
+        public Stack<int> Stos = new Stack<int>();
+        public Tasowanie()
         {
-            Stack<int> stos = new Stack<int>();
             
-            //foreach (int karta in stos) //jeśli nie zadziała, zmienić int na var
-            //{
-            //    
-            //}
+            int IloscKart = 52;
+            bool CzyNieMa = true;
+            int[] wylosowane = new int[IloscKart];
+            Random random = new Random();
+            for (int i = 0; i < IloscKart; i++)     //można zoptymalizować sposób losowania numeru karty
+            {
+                int wylosowana = random.Next(0, IloscKart);
+                for (int j = 0; j < wylosowane.Length; j++)
+                {
+                    if (wylosowane[j] == wylosowana)
+                    {
+                        CzyNieMa = false; break;
+                    }
+                }
+                if (CzyNieMa)
+                {
+                    wylosowane[i] = wylosowana;
+                    Stos.Push(wylosowana);
+                }
+                else
+                {
+                    CzyNieMa = true;
+                    
+                }
+
+            }
+
+
+        }
+        public string? Dobierz()
+        {
+            Talia talia = new Talia();
+            int Id = Stos.Pop();
+            string? PelnaNazwa = "Kolor: " + talia.Karty[Id].PokazKolor() + "\nFigura: " + talia.Karty[Id].PokazFigure()+"\n";
+            return PelnaNazwa;
+        }
+        public int? Ile()
+        {
+            int Licz = Stos.Count();           
+            return Licz;
         }
     }
 }
