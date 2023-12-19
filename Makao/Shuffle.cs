@@ -14,7 +14,7 @@ namespace Makao
         protected string? Figura { get; set; }
         protected string? Kolor { get; set; }
         protected string? Wlasciwosc { get; set; }
-        protected bool? IsWlasciwosc { get; set; } = true;
+        protected bool IsWlasciwosc { get; set; } = true;
         public string? PokazKolor()
         {
             return Kolor;
@@ -60,36 +60,30 @@ namespace Makao
         //zarządaj zmiany koloru dla kolejnego gracza
         public As(int id,string? kolor)
         {
-            IdKarty = id;
             Figura = "As";
+            IdKarty = id;
             Kolor = kolor;
-        }
-        
-
+        }       
     }
     public class Walet : Karta
     {
         //zacządaj niefunkcujnej karty dla całej kolejki
-        public Walet()
+        public Walet(int id, string? kolor)
         {
             Figura = "Walet";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            IdKarty = id;
+            Kolor = kolor;
         }
 
     }
     public class Krolowa : Karta
     {
         //można położyć na wszystko oprócz Waleta
-        public Krolowa()
+        public Krolowa(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Królowa";
+            IdKarty = id;
+            Kolor = kolor;
         }
 
     }
@@ -98,77 +92,62 @@ namespace Makao
         //Królowie kier i pik
         //pik: kolejny gracz dobiera 5 kart
         //kier: poprzedni gracz dobiera 5 kart
-        public KrolBitny()
+        public KrolBitny(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Król";
+            IdKarty = id;
+            Kolor = kolor;
         }
 
     }
     public class KrolNiebitny : Karta
     {
         //królowie niebitni, blokują działanie innych królów
-        public KrolNiebitny()
+        public KrolNiebitny(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Król";
+            IdKarty = id;
+            Kolor = kolor;
         }
     }
     public class Dwa : Karta
     {
         //dobierz 2
-        public Dwa()
+        public Dwa(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Dwa";
+            IdKarty = id;
+            Kolor = kolor;
         }
         
     }
     public class Trzy : Karta
     {
         //dobierz 3
-        public Trzy()
+        public Trzy(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Trzy";
+            IdKarty = id;
+            Kolor = kolor;
         }
     }
     public class Cztery : Karta
     {
         //kolejny gracz czeka kolejkę
-        public Cztery()
+        public Cztery(int id, string? kolor)
         {
-            Figura = "As";
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            Figura = "Cztery";
+            IdKarty = id;
+            Kolor = kolor;
         }
     }
     public class Niefunkcyjne : Karta
     {
-        public Niefunkcyjne()
+        public Niefunkcyjne(int id, string? kolor, string figura)
         {
-            void PodajFigure(string figura)
-            {
-                Figura = figura;
-            }
-            void PodajKolor(string kolor)
-            {
-                Kolor = kolor;
-            }
+            IdKarty = id;
+            Figura = figura;
+            Kolor = kolor;
             IsWlasciwosc = false;
         }
         //karty które nie mają konkretnej funkcji
@@ -176,12 +155,11 @@ namespace Makao
     }
     public class Talia
     {
-        public List<As> Asy { get; private set; }
-
+        public List<Karta> Karty {  get; private set; }
         public Talia()
         {
-            Asy = new List<As>();
-
+            //Asy = new List<As>();
+            Karty = new List<Karta>();
             int id = 0;
             for (int i = 0; i < 4; i++)
             {
@@ -194,11 +172,11 @@ namespace Makao
                         break;
                     case 1:
                         id = i;
-                        kolor = "Pik";
+                        kolor = "Trefl";
                         break;
                     case 2:
                         id = i;
-                        kolor = "Trefl";
+                        kolor = "Pik";
                         break;
                     case 3:
                         id = i;
@@ -208,8 +186,58 @@ namespace Makao
                         break;
                 }
                 As nowyAs = new As(++id, kolor);
-                Asy.Add(nowyAs);             
-            }           
+                Karty.Add(nowyAs);
+                Walet nowyWalet = new Walet(id+4, kolor);
+                Karty.Add(nowyWalet);
+                Krolowa nowaKrolowa = new Krolowa(id + 8, kolor);
+                Karty.Add(nowaKrolowa);
+                if (i % 2 == 0) {
+                    KrolBitny nowyKrol1 = new KrolBitny(id + 12, kolor);
+                    Karty.Add(nowyKrol1);
+                }
+                else { 
+                    KrolNiebitny nowyKrol2 = new KrolNiebitny(id + 12, kolor);
+                    Karty.Add(nowyKrol2);
+                }
+                //2 => 16 - 19
+                Dwa noweDwa = new Dwa(id + 16, kolor);
+                Karty.Add(noweDwa);
+                //3 => 20 - 23
+                Trzy noweTrzy = new Trzy(id + 20, kolor);
+                Karty.Add(noweTrzy);
+                //4 => 24 - 27
+                Cztery noweCztery= new Cztery(id + 24, kolor);
+                Karty.Add(nowaKrolowa);
+                //5-10 => 28-51
+                for (int j = 0; j < 6; j++)
+                {
+                    string liczba = "nic tu nie ma";
+
+                    switch(j)
+                    {
+                        case 0:
+                            liczba = "Pięć";
+                            break;
+                        case 1:
+                            liczba = "Sześć";
+                            break;
+                        case 2:
+                            liczba = "Siedem";
+                            break;
+                        case 3:
+                            liczba = "Osiem";
+                            break;
+                        case 4:
+                            liczba = "Dziewięć";
+                            break;
+                        case 5:
+                            liczba = "Dziesięć";
+                            break;
+                    }
+                    Niefunkcyjne liczby = new Niefunkcyjne(28 + j + i * 6, kolor, liczba);
+                    Karty.Add(liczby);
+                }
+            }
         }
     }
     public class TasowanieTalii  
