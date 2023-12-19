@@ -154,7 +154,7 @@ namespace Makao
                     default:
                         break;
                 }
-                As nowyAs = new As(++id, kolor);
+                As nowyAs = new As(id++, kolor);
                 Karty.Add(nowyAs);
                 Walet nowyWalet = new Walet(id+4, kolor);
                 Karty.Add(nowyWalet);
