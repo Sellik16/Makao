@@ -8,5 +8,9 @@ namespace Makao
 {
     class Check
     {
+        public Check() 
+        {
+        
+        }
     }
 }
