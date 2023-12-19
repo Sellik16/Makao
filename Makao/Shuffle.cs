@@ -221,31 +221,18 @@ namespace Makao
         {
             
             int IloscKart = 52;
-            bool CzyNieMa = true;
-            int[] wylosowane = new int[IloscKart];
             Random random = new Random();
-            for (int i = 0; i < IloscKart; i++)     //można zoptymalizować sposób losowania numeru karty
+            for (int i = 0; i < IloscKart; i++)
             {
-                int wylosowana = random.Next(0, IloscKart);
-                for (int j = 0; j < wylosowane.Length; j++)
+                int wylosowana;
+                do
                 {
-                    if (wylosowane[j] == wylosowana)
-                    {
-                        CzyNieMa = false; break;
-                    }
-                }
-                if (CzyNieMa)
-                {
-                    wylosowane[i] = wylosowana;
-                    Stos.Push(wylosowana);
-                }
-                else
-                {
-                    CzyNieMa = true;
-                    
-                }
+                    wylosowana = random.Next(0, IloscKart);
+                } while (Stos.Contains(wylosowana));
 
+                Stos.Push(wylosowana);
             }
+
 
 
         }
@@ -253,7 +240,7 @@ namespace Makao
         {
             Talia talia = new Talia();
             int Id = Stos.Pop();
-            string? PelnaNazwa = "Kolor: " + talia.Karty[Id].PokazKolor() + "\nFigura: " + talia.Karty[Id].PokazFigure()+"\n";
+            string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+"\n";
             return PelnaNazwa;
         }
         public int? Ile()
