@@ -19,42 +19,11 @@ namespace Makao
         {
             return Kolor;
         }
+        public string? PokazFigure()
+        {
+            return Figura;
+        }
     }
-    //public class Wlasciwosc
-    //{
-    //    public Wlasciwosc()
-    //    {
-    //        void DobierzNext(int x)
-    //        {
-
-    //        }
-    //        void DobierzPrev(int x)
-    //        {
-
-    //        }
-    //        void Czekaj(int x)
-    //        {
-
-    //        }
-    //        void ZmianaKolejka(int x)
-    //        {
-
-    //        }
-    //        void ZmianaGracz(int x)
-    //        {
-
-    //        }
-    //        void NaWszystko()
-    //        {
-    //            //if walet => nie działa
-
-    //        }
-    //        void Blokuj()
-    //        {
-
-    //        }
-    //    }
-    //}
     public class As : Karta
     {
         //zarządaj zmiany koloru dla kolejnego gracza

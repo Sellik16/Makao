@@ -9,9 +9,11 @@ namespace Makao
         {
             InitializeComponent();
 
-            ////Wyświetlanie pierwszego asa w tali
-            //Talia talia = new Talia();
-            //hlwrd.Text = talia.Asy[0].PokazKolor();
+            //wyświetlanie pierwszego asa w tali
+            Talia talia = new Talia();
+            int Index = 42;
+            string DaneKarty = "Kolor: " + talia.Karty[Index].PokazKolor()+ "\nFigura: " + talia.Karty[Index].PokazFigure();
+            hlwrd.Text = DaneKarty;
 
 
         }
