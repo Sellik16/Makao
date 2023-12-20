@@ -212,12 +212,12 @@ namespace Makao
     
     public class Stos
     {
-        
-    }
-    public class Tasowanie
-    {
-        public Stack<int> Stos = new Stack<int>();
-        public Tasowanie()
+        public Stack<int> Stosik = new Stack<int>();
+        public int TaliaPoczatkowa = 5;
+        //public Stack<int> TaliaGracza = new Stack<int>();
+        //public Stack<int> TaliaPrzeciwnika1 = new Stack<int>();
+        //public Stack<int> TaliaPrzeciwnika2 = new Stack<int>();
+        public Stos()
         {
             
             int IloscKart = 52;
@@ -228,25 +228,33 @@ namespace Makao
                 do
                 {
                     wylosowana = random.Next(0, IloscKart);
-                } while (Stos.Contains(wylosowana));
+                } while (Stosik.Contains(wylosowana));
 
-                Stos.Push(wylosowana);
+                Stosik.Push(wylosowana);
             }
-
-
-
         }
-        public string? Dobierz()
+        public string Dobierz()
         {
             Talia talia = new Talia();
-            int Id = Stos.Pop();
-            string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+"\n";
+            int Id = Stosik.Pop();
+            string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+" - ";
             return PelnaNazwa;
         }
         public int? Ile()
         {
-            int Licz = Stos.Count();           
+            int Licz = Stosik.Count();           
             return Licz;
         }
+        public string[] Gracz()
+        {
+            string[] talia = new string[TaliaPoczatkowa];
+            for (int i = 0; i < TaliaPoczatkowa; i++)
+            {
+                talia[i] = Dobierz();
+            }
+            return talia;
+        }
+
+
     }
 }

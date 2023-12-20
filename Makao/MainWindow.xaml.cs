@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,16 +14,15 @@ namespace Makao
             {
                 //wyświetlanie pierwszego asa w tali
                 Talia talia = new Talia();
-                Tasowanie tasowanie = new Tasowanie();
-                string? w1 = tasowanie.Dobierz();
-                string? w2 = tasowanie.Dobierz();
-                string? w3 = tasowanie.Dobierz();
-                string? w4 = tasowanie.Dobierz();
+                Stos stos = new Stos();
+                string[]? TaliaG = stos.Gracz();
+                string[]? TaliaP1 = stos.Gracz();
+                string[]? TaliaP2 = stos.Gracz();
+                string? Start = stos.Dobierz();
 
-                int? i = tasowanie.Ile();
-                int Index = 42;
-                string DaneKarty = "Kolor: " + talia.Karty[Index].PokazKolor()+ "\nFigura: " + talia.Karty[Index].PokazFigure();
-                hlwrd.Text = w1 + w2 + w3 + w4 + "\nLiczba kart pozostałych na stosie: " + i;
+                int? Ile = stos.Ile();
+                
+                hlwrd.Text ="Karta na stosie: " + Start + "\nLiczba kart pozostałych na stosie: " + Ile;
             }
             catch (Exception ex)
             {
