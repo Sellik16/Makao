@@ -233,6 +233,20 @@ namespace Makao
                 Stosik.Push(wylosowana);
             }
         }
+        ////                            poniżej znajduje się zarys funkcji tasującej ale trzeba w nim pozmieniać nazwy zmiennych np Stosik
+        ////                            Trzeba jeszcze utworzyć funkcje która po położeniu karty doda poprzednią wierzchnią kartę do tablicy i doda liczby losowo do Stosu      
+        ////
+        //public Stack<int> Tasuj(Stack<int> zuzyte)
+        //{
+        //    int IloscKart = Stosik.Count();
+        //    Random random = new Random();
+        //    int[] tab = new int[IloscKart];
+        //    for (int i = 0; i < IloscKart; i++)
+        //    {
+        //        tab[i] = Stosik.Pop();
+        //    }
+        //    return Stosik;
+        //}
         public string Dobierz()
         {
             Talia talia = new Talia();
