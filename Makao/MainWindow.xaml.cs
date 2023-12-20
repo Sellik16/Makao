@@ -18,25 +18,11 @@ namespace Makao
                 string[]? TaliaG = stos.Gracz();
                 string[]? TaliaP1 = stos.Gracz();
                 string[]? TaliaP2 = stos.Gracz();
-
+                string? Start = stos.Dobierz();
 
                 int? Ile = stos.Ile();
-                string T1 = "";
-                string T2 = "";
-                string T3 = "";
-                foreach (string Karta in TaliaG)
-                {
-                    T1 = T1 + Karta;
-                }
-                foreach (string Karta in TaliaP1)
-                {
-                    T2 = T2 + Karta;
-                }
-                foreach (string Karta in TaliaP2)
-                {
-                    T3 = T3 + Karta;
-                }
-                hlwrd.Text =T1 + "\n" + T2 + "\n" + T3 + "\n" + "\nLiczba kart pozostałych na stosie: " + Ile;
+                
+                hlwrd.Text ="Karta na stosie: " + Start + "\nLiczba kart pozostałych na stosie: " + Ile;
             }
             catch (Exception ex)
             {
