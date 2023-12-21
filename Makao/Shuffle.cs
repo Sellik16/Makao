@@ -14,7 +14,7 @@ namespace Makao
         protected string? Figura { get; set; }
         protected string? Kolor { get; set; }
         protected string? Wlasciwosc { get; set; }
-        protected bool IsWlasciwosc { get; set; } = true;
+        protected bool IsAkcja { get; set; } = true;
         public string? PokazKolor()
         {
             return Kolor;
@@ -24,6 +24,7 @@ namespace Makao
             return Figura;
         }
     }
+    
     public class As : Karta
     {
         //zarządaj zmiany koloru dla kolejnego gracza
@@ -33,6 +34,7 @@ namespace Makao
             IdKarty = id;
             Kolor = kolor;
         }       
+        
     }
     public class Walet : Karta
     {
@@ -117,7 +119,7 @@ namespace Makao
             IdKarty = id;
             Figura = figura;
             Kolor = kolor;
-            IsWlasciwosc = false;
+            IsAkcja = false;
         }
         //karty które nie mają konkretnej funkcji
         //5-10
