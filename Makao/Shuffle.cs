@@ -14,7 +14,7 @@ namespace Makao
         protected string? Figura { get; set; }
         protected string? Kolor { get; set; }
         protected string? Wlasciwosc { get; set; }
-        protected bool IsWlasciwosc { get; set; } = true;
+        protected bool IsAkcja { get; set; } = true;
         public string? PokazKolor()
         {
             return Kolor;
@@ -24,6 +24,7 @@ namespace Makao
             return Figura;
         }
     }
+    
     public class As : Karta
     {
         //zarządaj zmiany koloru dla kolejnego gracza
@@ -33,6 +34,7 @@ namespace Makao
             IdKarty = id;
             Kolor = kolor;
         }       
+        
     }
     public class Walet : Karta
     {
@@ -117,7 +119,7 @@ namespace Makao
             IdKarty = id;
             Figura = figura;
             Kolor = kolor;
-            IsWlasciwosc = false;
+            IsAkcja = false;
         }
         //karty które nie mają konkretnej funkcji
         //5-10
@@ -233,11 +235,36 @@ namespace Makao
                 Stosik.Push(wylosowana);
             }
         }
+        ////                            poniżej znajduje się zarys funkcji tasującej ale trzeba w nim pozmieniać nazwy zmiennych np Stosik
+        ////                            Trzeba jeszcze utworzyć funkcje która po położeniu karty doda poprzednią wierzchnią kartę do tablicy i doda liczby losowo do Stosu      
+        ////
+        public Stack<int> Tasuj()
+        {
+            int[] temp = new int[Stosik.Count];
+            Random random = new Random();
+            for(int i = 0 ; i < Stosik.Count ; i++ )
+            {
+                temp[random.Next(0,Stosik.Count)] = Stosik.Pop();
+            }
+            Stack<int> stack = new Stack<int>();
+            foreach ( int item in temp )
+            {
+                stack.Push(item);
+            }
+            return stack;
+        }
         public string Dobierz()
         {
             Talia talia = new Talia();
             int Id = Stosik.Pop();
             string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+" - ";
+            return PelnaNazwa;
+        }
+        public string Podejrzyj()
+        {
+            Talia talia = new Talia();
+            int Id = Stosik.Peek();
+            string? PelnaNazwa = talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor() + " - ";
             return PelnaNazwa;
         }
         public int? Ile()
@@ -255,6 +282,6 @@ namespace Makao
             return talia;
         }
 
-
+        
     }
 }
