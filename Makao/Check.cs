@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Makao
 {
-    class Akcja
+    class Sprawdz
     {
         public Karta ZReki { get; set; }
         public Karta ZeStosu { get; set; }
         
-        public Akcja() 
+        public Sprawdz() 
         {
             string Kolor = ZReki.PokazFigure();
             switch (Kolor)
@@ -40,19 +40,41 @@ namespace Makao
                 default: break;
             }
         }
-        public bool CzyMoznaZagrac(Karta x, Karta y)
+        public string AktualnyKolor()
         {
-            bool Czy = false;
+            string Kolor = ZeStosu.PokazKolor();
+            return Kolor;
+        }
+        public string AktualnFigura()
+        {
+            string Figura = ZeStosu.PokazFigure();
+            return Figura;
+        }
+        public string CzyMoznaZagrac()
+        {
+            string AK = AktualnyKolor();
+            string AF = AktualnFigura();
+            string? Czy;
             ZReki = x;
-            ZeStosu = y;
+            Kolor = y;
 
-            if (ZReki.PokazFigure() == ZeStosu.PokazFigure())
-                Czy = true;
+            if (ZReki.PokazFigure() == AK)
+                Czy = "tak";
             if (ZReki.PokazKolor() == ZeStosu.PokazKolor())
-                Czy = true;
-
+                Czy = "tak";
+            else Czy = "Nie";
             return Czy;
         }
-        
+    }
+    public class Akcja
+    {
+        Stos stos = new Stos();
+        string As()
+        {
+            return "Wybierz kolor!";
+            //trzeba wyświetlić wszystkie kolory asów
+            //gracz klika kolor i wybiera w jakim kolorze musi być karta kolejnego gracza
+
+        }
     }
 }
