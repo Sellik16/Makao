@@ -21,12 +21,12 @@ namespace Makao
                 string[]? TaliaP1 = stos.Gracz();
                 string[]? TaliaP2 = stos.Gracz();
                 string? ZeStosu = stos.Dobierz();
-                string? p1 = zuzyte.Podejrzyj();
+                int? p1 = zuzyte.Ile();
                 zuzyte.Tasuj();
-                string? p2 = zuzyte.Podejrzyj();
+                int? p2 = zuzyte.Ile();
                 int? Ile = stos.Ile();
                 
-                hlwrd.Text =p1+" -- "+ p2 +"\n" + "Karta na stosie: " + ZeStosu + "\nLiczba kart pozostałych na stosie: " + Ile;
+                hlwrd.Text =p1 + "\n" + p2;
             }
             catch (Exception ex)
             {

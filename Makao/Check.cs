@@ -55,8 +55,7 @@ namespace Makao
             string AK = AktualnyKolor();
             string AF = AktualnFigura();
             string? Czy;
-            ZReki = x;
-            Kolor = y;
+            
 
             if (ZReki.PokazFigure() == AK)
                 Czy = "tak";
