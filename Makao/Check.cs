@@ -65,15 +65,24 @@ namespace Makao
             return Czy;
         }
     }
-    public class Akcja
+    public class Tura
     {
-        Stos stos = new Stos();
-        string As()
-        {
-            return "Wybierz kolor!";
-            //trzeba wyświetlić wszystkie kolory asów
-            //gracz klika kolor i wybiera w jakim kolorze musi być karta kolejnego gracza
+        public Tura() { }
 
-        }
+        
+        //aktualna akcja --- zawiera czas trwania(liczba tur), 
+        //Tura składa się z trzech 
     }
+    //public class Akcja
+    //{
+    //    Talia talia = new Talia();
+    //    string As()
+    //    {
+    //        return "Wybierz kolor!";
+    //        //trzeba wyświetlić wszystkie kolory asów
+    //        //gracz klika kolor i wybiera w jakim kolorze musi być karta kolejnego gracza
+
+    //    }
+    //}
+
 }
