@@ -240,18 +240,26 @@ namespace Makao
         ////
         public Stack<int> Tasuj()
         {
-            int[] temp = new int[Stosik.Count];
+            
+            int[] temp = Stosik.ToArray();
             Random random = new Random();
-            for(int i = 0 ; i < Stosik.Count ; i++ )
-            {
-                temp[random.Next(0,Stosik.Count)] = Stosik.Pop();
-            }
             Stack<int> stack = new Stack<int>();
+            
+            for(int i = 0; i < temp.Length ; i++ )
+            {
+
+                int r = random.Next(0 , temp.Length);
+                int t = temp[i];
+                temp[i] = temp[r];
+                temp[r] = t;
+                
+            }
             foreach ( int item in temp )
             {
                 stack.Push(item);
             }
-            return stack;
+            Stosik = stack;
+            return Stosik;
         }
         public string Dobierz()
         {
