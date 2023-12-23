@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//ten plik w dużym stopniu będzie odwoływać się do Shuffle.cs i to właśnie tam znajduje się większość klas i funkcji które są tutaj używane
 namespace Makao
 {
     class Sprawdz
     {
+        //będzie trzeba jakoś pobrać wartości kart z ręki i karty ze stosu
+        
         public Karta ZReki { get; set; }
         public Karta ZeStosu { get; set; }
         
@@ -73,6 +75,8 @@ namespace Makao
         //aktualna akcja --- zawiera czas trwania(liczba tur), 
         //Tura składa się z trzech 
     }
+    // w klasie akcja będą funkcje kart, wywoływane w klasie tura
+    // 
     //public class Akcja
     //{
     //    Talia talia = new Talia();
