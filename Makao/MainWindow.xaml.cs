@@ -29,7 +29,7 @@ namespace Makao
                 int rozmiarP2 = 0;
                 do
                 {
-                    Obecna.Text = "Karta na stosie = " + stos.IntNaString(ZeStosu);
+                    Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
                     //gracz
                     int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
                     rozmiarG = GMoze.Length;
@@ -49,16 +49,16 @@ namespace Makao
                     
                     //przeciwnik1
                     int[] P1Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
-                    rozmiarP1 = P1Moze.Length;
-                    Pierwszy.Text += "\nliczba kart Przeciwnika 1, które można położyć: " + rozmiarP1;
+                    rozmiarP1 = TaliaP1.Length;
+                    Pierwszy.Text += "\nliczba kart Przeciwnika 1: " + rozmiarP1;
 
 
 
 
                     //PRZECIWNIK2
                     int[] P2Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
-                    rozmiarP2 = P2Moze.Length;
-                    Drugi.Text += "\nliczba kart Przeciwnika 2, które można położyć: " + rozmiarP2;
+                    rozmiarP2 = TaliaP2.Length;
+                    Drugi.Text += "\nliczba kart Przeciwnika 2: " + rozmiarP2;
                 }
                 while (wygrana);
 
