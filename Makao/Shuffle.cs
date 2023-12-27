@@ -268,6 +268,18 @@ namespace Makao
             string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+" - ";
             return PelnaNazwa;
         }
+        public int DobierzInt()
+        {
+            return Stosik.Pop();
+        }
+        public string IntNaString(int n)
+        {
+            Talia talia = new Talia();
+            int Id = n;
+            string? PelnaNazwa = talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor();
+            return PelnaNazwa;
+
+        }
         public string Podejrzyj()
         {
             Talia talia = new Talia();
@@ -280,12 +292,12 @@ namespace Makao
             int Licz = Stosik.Count();           
             return Licz;
         }
-        public string[] Gracz()
+        public int[] Gracz()
         {
-            string[] talia = new string[TaliaPoczatkowa];
+            int[] talia = new int[TaliaPoczatkowa];
             for (int i = 0; i < TaliaPoczatkowa; i++)
             {
-                talia[i] = Dobierz();
+                talia[i] = DobierzInt();
             }
             return talia;
         }

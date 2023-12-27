@@ -16,17 +16,43 @@ namespace Makao
                 Talia talia = new Talia();
                 Stos stos = new Stos();
                 Stos zuzyte = new Stos();
-                zuzyte = stos;
-                string[]? TaliaG = stos.Gracz();
-                string[]? TaliaP1 = stos.Gracz();
-                string[]? TaliaP2 = stos.Gracz();
-                string? ZeStosu = stos.Dobierz();
-                int? p1 = zuzyte.Ile();
-                zuzyte.Tasuj();
-                int? p2 = zuzyte.Ile();
-                int? Ile = stos.Ile();
+                Tura tura = new Tura();
+                Sprawdz sprawdz = new Sprawdz();
                 
-                hlwrd.Text =p1 + "\n" + p2;
+                int[]? TaliaG = stos.Gracz();
+                int[]? TaliaP1 = stos.Gracz();
+                int[]? TaliaP2 = stos.Gracz();
+                int ZeStosu = stos.DobierzInt();
+                bool wygrana = false;
+                int rozmiarG = 0;
+                int rozmiarP1 = 0;
+                int rozmiarP2 = 0;
+                do
+                {
+                    hlwrd.Text = "Karta na stosie = " + stos.IntNaString(ZeStosu);
+                    //gracz
+                    int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
+                    rozmiarG = GMoze.Length;
+                    hlwrd.Text += "\nliczba kart gracza, które można położyć: " + rozmiarG;
+                    
+                    
+                    //przeciwnik1
+                    int[] P1Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
+                    rozmiarP1 = P1Moze.Length;
+                    hlwrd.Text += "\nliczba kart Przeciwnika 1, które można położyć: " + rozmiarP1;
+
+
+
+
+                    //PRZECIWNIK2
+                    int[] P2Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
+                    rozmiarP2 = P2Moze.Length;
+                    hlwrd.Text += "\nliczba kart Przeciwnika 2, które można położyć: " + rozmiarP2;
+                }
+                while (wygrana);
+
+
+                
             }
             catch (Exception ex)
             {

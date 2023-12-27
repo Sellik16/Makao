@@ -9,67 +9,59 @@ namespace Makao
     class Sprawdz
     {
         //będzie trzeba jakoś pobrać wartości kart z ręki i karty ze stosu
+        Talia Talia = new Talia();
+        Stos Stosik = new Stos();
 
-        public Karta ZReki { get; set; }
-        public Karta ZeStosu { get; set; }
-
-        public Sprawdz()
-        {
-            string Kolor = ZReki.PokazFigure();
-            switch (Kolor)
+        public bool SprawdzKarte(int Stos , int Reka)
             {
-                case "As":
-
-                    break;
-                case "Walet":
-
-                    break;
-                case "Królowa":
-
-                    break;
-                case "Król":
-
-                    break;
-                case "Dwa":
-
-                    break;
-                case "Trzy":
-
-                    break;
-                case "Cztery":
-
-                    break;
-                default: break;
+            bool CzyMozna = false;
+            string? StosKolor = Talia.Karty[Stos].PokazKolor();
+            string? StosFigura = Talia.Karty[Stos].PokazFigure();
+            string? RekaKolor = Talia.Karty[Reka].PokazKolor();
+            string? RekaFigura = Talia.Karty[Reka].PokazFigure();
+            if(RekaKolor == StosKolor)  CzyMozna = true;
+            if(RekaFigura == StosFigura) CzyMozna = true;
+            return CzyMozna;
+            
             }
-        }
-        public string AktualnyKolor()
+        public int[] KtoreKarty(int Stos, int[] Reka)
         {
-            string Kolor = ZeStosu.PokazKolor();
-            return Kolor;
-        }
-        public string AktualnFigura()
-        {
-            string Figura = ZeStosu.PokazFigure();
-            return Figura;
-        }
-        public string CzyMoznaZagrac()
-        {
-            string AK = AktualnyKolor();
-            string AF = AktualnFigura();
-            string? Czy;
+            int j = 0;
 
+            for (int i = 0; i < Reka.Length; i++)
+            {
+                bool CzyMozna = SprawdzKarte(Stos, Reka[i]);
+                if (CzyMozna)
+                {
+                    j++;
+                }
+            }
+            int[] Mozna = new int[j];
+            j = 0;
+            for (int i = 0; i < Reka.Length; i++)
+            {
+                bool CzyMozna = SprawdzKarte(Stos, Reka[i]);
+                if (CzyMozna)
+                {
+                    Mozna[j] = Reka[i];
+                }
+            }
+            return Mozna;
 
-            if (ZReki.PokazFigure() == AK)
-                Czy = "tak";
-            if (ZReki.PokazKolor() == ZeStosu.PokazKolor())
-                Czy = "tak";
-            else Czy = "Nie";
-            return Czy;
         }
+        
     }
+    
     public class Tura
     {
-        public Tura() { }
+        public string? Akcja;
+        public bool wygrana = false;
+        
+        public Tura() 
+        { 
+            
+        }
+
 
 
         //aktualna akcja --- zawiera czas trwania(liczba tur), 

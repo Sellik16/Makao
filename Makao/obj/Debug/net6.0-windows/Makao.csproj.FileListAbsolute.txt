@@ -39,3 +39,4 @@ C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\refint\Makao
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\Makao.pdb
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\Makao.genruntimeconfig.cache
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\ref\Makao.dll
+C:\Users\kusel\Source\Repos\Makao\Makao\obj\Debug\net6.0-windows\Makao.csproj.AssemblyReference.cache
