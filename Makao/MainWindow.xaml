@@ -7,18 +7,39 @@
         mc:Ignorable="d"
         Title="Makao" Height="450" Width="800">
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Name="hlwrd" FontSize="20"/>
-        </StackPanel>
-        <Button Content="Dobierz Kartę" FontFamily="Fira Sans" FontSize="15" Padding="5,2" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="663,64,0,0" VerticalAlignment="Top" Width="110" />
-        <Button Content="Połóż Kartę" FontFamily="Fira Sans" FontSize="15" Padding="5,2" FontWeight="Bold" HorizontalAlignment="Left" Height="25" Margin="663,121,0,0" VerticalAlignment="Top" Width="110"/>
-        <TextBox  Name ="Obecna" TextAlignment="Center" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Height="118" Margin="51,41,0,0" TextWrapping="Wrap" Text="Obecna Karta
+        
+        <Button Name="Dob" 
+                Content="Dobierz Kartę" 
+                FontFamily="Fira Sans" 
+                FontSize="15" 
+                Padding="5,2" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Left" 
+                Height="26" 
+                Margin="663,64,0,0" 
+                VerticalAlignment="Top" 
+                Width="110" 
+                Cursor="Hand"
+                Click="Dob_Click"
+                />
+        <Button Content="Połóż Kartę" 
+                FontFamily="Fira Sans" 
+                FontSize="15" Padding="5,2" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Left" 
+                Height="25" 
+                Margin="663,121,0,0" 
+                VerticalAlignment="Top" 
+                Width="110"
+                Cursor="Hand"
+                />
+        <TextBlock  Name ="Obecna" TextAlignment="Center" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Height="118" Margin="51,41,0,0" TextWrapping="Wrap" Text="Obecna Karta
                  " VerticalAlignment="Top" Width="163" />
-        <TextBox Name ="Skrol" HorizontalAlignment="Left" Height="118" Margin="245,41,0,0" VerticalAlignment="Top" Width="155" TextWrapping="Wrap" />
-        <TextBox HorizontalAlignment="Left" TextAlignment="Center" Height="26" Margin="245,10,0,0" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold"  TextWrapping="Wrap" Text="Twoje Karty" VerticalAlignment="Top" Width="155" />
-        <TextBox Name="Pierwszy" HorizontalAlignment="Left" Height="46" Margin="51,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold" />
-        <TextBox Name="Drugi" HorizontalAlignment="Left" Height="44" Margin="51,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
-        <TextBox Name="Trzeci" HorizontalAlignment="Left" Height="44" Margin="51,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
-        <TextBox Name="Czwarty" HorizontalAlignment="Left" Height="44" Margin="51,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name ="Skrol" HorizontalAlignment="Left" Height="118" Margin="245,41,0,0" VerticalAlignment="Top" Width="155" TextWrapping="Wrap" />
+        <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="26" Margin="245,10,0,0" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold"  TextWrapping="Wrap" Text="Twoje Karty" VerticalAlignment="Top" Width="155" />
+        <TextBlock Name="Pierwszy" HorizontalAlignment="Left" Height="46" Margin="51,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold" />
+        <TextBlock Name="Drugi" HorizontalAlignment="Left" Height="44" Margin="51,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Trzeci" HorizontalAlignment="Left" Height="44" Margin="51,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Czwarty" HorizontalAlignment="Left" Height="44" Margin="51,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
     </Grid>
 </Window>

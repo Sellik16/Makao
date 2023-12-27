@@ -235,6 +235,7 @@ namespace Makao
                 Stosik.Push(wylosowana);
             }
         }
+
         ////                            poniżej znajduje się zarys funkcji tasującej ale trzeba w nim pozmieniać nazwy zmiennych np Stosik
         ////                            Trzeba jeszcze utworzyć funkcje która po położeniu karty doda poprzednią wierzchnią kartę do tablicy i doda liczby losowo do Stosu      
         ////
