@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj": {}
+    "C:\\Users\\Kacper\\Source\\Repos\\Makaota\\Makao\\Makao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj": {
+    "C:\\Users\\Kacper\\Source\\Repos\\Makaota\\Makao\\Makao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj",
+        "projectUniqueName": "C:\\Users\\Kacper\\Source\\Repos\\Makaota\\Makao\\Makao.csproj",
         "projectName": "Makao",
-        "projectPath": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\Makao.csproj",
-        "packagesPath": "C:\\Users\\kusel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kusel\\Source\\Repos\\Makao\\Makao\\obj\\",
+        "projectPath": "C:\\Users\\Kacper\\Source\\Repos\\Makaota\\Makao\\Makao.csproj",
+        "packagesPath": "C:\\Users\\Kacper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kacper\\Source\\Repos\\Makaota\\Makao\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kusel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Kacper\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
