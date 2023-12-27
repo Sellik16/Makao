@@ -29,28 +29,28 @@ namespace Makao
                 int rozmiarP2 = 0;
                 do
                 {
-                    hlwrd.Text = "Karta na stosie = " + stos.IntNaString(ZeStosu);
+                    Obecna.Text = "Karta na stosie = " + stos.IntNaString(ZeStosu);
                     //gracz
                     int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
                     rozmiarG = GMoze.Length;
-                    hlwrd.Text += "\nWszystkie karty w ręcę: ";
+                    Skrol.Text += "\nWszystkie karty w ręcę: ";
                     for (int i = 0; i < TaliaG.Length; i++)
                     {
-                        hlwrd.Text += stos.IntNaString(TaliaG[i])+" - ";
+                        Skrol.Text += stos.IntNaString(TaliaG[i])+" - ";
                     }
-                    hlwrd.Text += "\nMożna zagrać: ";
+                    Czwarty.Text += "\nMożna zagrać: ";
                     for (int i = 0; i < GMoze.Length; i++)
                     {
-                        hlwrd.Text += stos.IntNaString(GMoze[i]) + " - ";
+                        Czwarty.Text += stos.IntNaString(GMoze[i]) + " - ";
                     }
                     
-                    hlwrd.Text += "\nliczba kart gracza, które można położyć: " + rozmiarG;
+                    Trzeci.Text += "\nliczba kart gracza, które można położyć: " + rozmiarG;
                     
                     
                     //przeciwnik1
                     int[] P1Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
                     rozmiarP1 = P1Moze.Length;
-                    hlwrd.Text += "\nliczba kart Przeciwnika 1, które można położyć: " + rozmiarP1;
+                    Pierwszy.Text += "\nliczba kart Przeciwnika 1, które można położyć: " + rozmiarP1;
 
 
 
@@ -58,7 +58,7 @@ namespace Makao
                     //PRZECIWNIK2
                     int[] P2Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
                     rozmiarP2 = P2Moze.Length;
-                    hlwrd.Text += "\nliczba kart Przeciwnika 2, które można położyć: " + rozmiarP2;
+                    Drugi.Text += "\nliczba kart Przeciwnika 2, które można położyć: " + rozmiarP2;
                 }
                 while (wygrana);
 
@@ -71,5 +71,7 @@ namespace Makao
             }
 
         }
+
+      
     }
 }
