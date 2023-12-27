@@ -33,6 +33,17 @@ namespace Makao
                     //gracz
                     int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
                     rozmiarG = GMoze.Length;
+                    hlwrd.Text += "\nWszystkie karty w ręcę: ";
+                    for (int i = 0; i < TaliaG.Length; i++)
+                    {
+                        hlwrd.Text += stos.IntNaString(TaliaG[i])+" - ";
+                    }
+                    hlwrd.Text += "\nMożna zagrać: ";
+                    for (int i = 0; i < GMoze.Length; i++)
+                    {
+                        hlwrd.Text += stos.IntNaString(GMoze[i]) + " - ";
+                    }
+                    
                     hlwrd.Text += "\nliczba kart gracza, które można położyć: " + rozmiarG;
                     
                     
