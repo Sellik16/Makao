@@ -235,6 +235,16 @@ namespace Makao
                 Stosik.Push(wylosowana);
             }
         }
+        public int[] DobierzDo(int[] reka)
+        {
+            int[] NowaReka = new int[reka.Length + 1 ];
+            for(int i = 0;i < reka.Length;i++)
+            {
+                NowaReka[i] = reka[i];
+            }
+            NowaReka[NowaReka.Length-1] = DobierzInt();
+            return NowaReka;
+        }
 
         ////                            poniżej znajduje się zarys funkcji tasującej ale trzeba w nim pozmieniać nazwy zmiennych np Stosik
         ////                            Trzeba jeszcze utworzyć funkcje która po położeniu karty doda poprzednią wierzchnią kartę do tablicy i doda liczby losowo do Stosu      
@@ -262,13 +272,13 @@ namespace Makao
             Stosik = stack;
             return Stosik;
         }
-        public string Dobierz()
-        {
-            Talia talia = new Talia();
-            int Id = Stosik.Pop();
-            string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+" - ";
-            return PelnaNazwa;
-        }
+        //public string Dobierz()
+        //{
+        //    Talia talia = new Talia();
+        //    int Id = Stosik.Pop();
+        //    string? PelnaNazwa =talia.Karty[Id].PokazFigure() + " " + talia.Karty[Id].PokazKolor()+" - ";
+        //    return PelnaNazwa;
+        //}
         public int DobierzInt()
         {
             return Stosik.Pop();

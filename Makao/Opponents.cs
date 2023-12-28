@@ -37,7 +37,7 @@ namespace Makao
             {
                 Console.WriteLine($"Przeciwnik { + 1} dobiera kartę...");
                 stack.Tasuj();
-                stack.Dobierz();
+                stack.DobierzInt();
             }
 
             zmianaGracza();

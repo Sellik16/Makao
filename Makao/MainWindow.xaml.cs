@@ -28,7 +28,6 @@ namespace Makao
                 RozegrajRunde();
                 if (CzyKlik)
                 {
-                    TaliaG[TaliaG.Length] = stos.DobierzInt();
                     CzyKlik = false;
                     RozegrajRunde();
                 }
@@ -58,6 +57,8 @@ namespace Makao
 
             Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
             //gracz
+            //dobieranie do talii gracza jednej karty
+            TaliaG = stos.DobierzDo(TaliaG);
             int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
             rozmiarG = GMoze.Length;
             Skrol.Text += "\nWszystkie karty w ręcę: ";

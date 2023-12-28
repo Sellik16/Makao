@@ -39,7 +39,6 @@ C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\refint\Makao
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\Makao.pdb
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\Makao.genruntimeconfig.cache
 C:\Users\Kacper\Source\Repos\Makaota\Makao\obj\Debug\net6.0-windows\ref\Makao.dll
-C:\Users\kusel\Source\Repos\Makao\Makao\obj\Debug\net6.0-windows\Makao.csproj.AssemblyReference.cache
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\Makao.csproj.AssemblyReference.cache
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\App.g.cs
@@ -61,3 +60,4 @@ C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\Makao.Assemb
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\Makao.csproj.CoreCompileInputs.cache
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\Makao.genruntimeconfig.cache
 C:\Users\Kacper\Source\Repos\Makao12\Makao\obj\Debug\net6.0-windows\ref\Makao.dll
+C:\Users\kusel\Source\Repos\Makao\Makao\obj\Debug\net6.0-windows\Makao.sourcelink.json
