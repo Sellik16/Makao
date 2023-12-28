@@ -281,7 +281,9 @@ namespace Makao
         //}
         public int DobierzInt()
         {
-            return Stosik.Pop();
+            if (Stosik.Count > 0)
+                return Stosik.Pop();
+            else return 55;
             
         }
         public int JakiId()

@@ -45,6 +45,7 @@ namespace Makao
 
         void RozegrajRunde()
         {
+
             //dobieranie do talii gracza jednej karty
             if (CzyKlik)
             {
@@ -67,15 +68,15 @@ namespace Makao
             Skrol.Text = "\nWszystkie karty w ręcę: ";
             for (int i = 0; i < TaliaG.Length; i++)
             {
-                Skrol.Text = stos.IntNaString(TaliaG[i]) + " - ";
+                Skrol.Text += stos.IntNaString(TaliaG[i]) + " - ";
             }
             Czwarty.Text = "\nMożna zagrać: ";
             for (int i = 0; i < GMoze.Length; i++)
             {
-                Czwarty.Text = stos.IntNaString(GMoze[i]) + " - ";
+                Czwarty.Text += stos.IntNaString(GMoze[i]) + " - ";
             }
 
-            Trzeci.Text = "\nliczba kart gracza, które można położyć: " + rozmiarG;
+            Trzeci.Text = "\nliczba kart gracza, które można położyć: " + TaliaG.Length;
 
             
 
@@ -100,11 +101,31 @@ namespace Makao
         {
             zuzyte.Wstaw(ZeStosu);
         }
+        void Remis()
+        {
+            Obecna.Text = "Remis: Brak kart na stosie";
+            Skrol.Text = "";
+            Czwarty.Text = "";
+            Trzeci.Text = "";
+            Pierwszy.Text = "";
+            Drugi.Text = "";
+        }
         void Dob_Click(object sender, RoutedEventArgs e)
         {
-            CzyKlik = true;
-            RozegrajRunde();
-        }
+            
+            try
+            {
+                stos.Podejrzyj();
+                CzyKlik = true;
+                RozegrajRunde();
+
+            }
+            catch (Exception ex) 
+            { 
+                Remis();
+            }
+            
+            }
 
     }
 }
