@@ -282,7 +282,17 @@ namespace Makao
         public int DobierzInt()
         {
             return Stosik.Pop();
+            
         }
+        public int JakiId()
+        {
+            return Stosik.Peek();
+        }
+        public void Wstaw(int x)
+        {
+            Stosik.Push(x);
+        }
+
         public string IntNaString(int n)
         {
             Talia talia = new Talia();

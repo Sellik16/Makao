@@ -12,6 +12,7 @@ namespace Makao
         internal bool CzyKlik = false;
         public Talia talia = new Talia();
         public Stos stos = new Stos();
+        public Stos zuzyte = new Stos();
         public Tura tura = new Tura();
 
         int[] TaliaG;
@@ -26,11 +27,7 @@ namespace Makao
             {
                 InicjalizujRundy();
                 RozegrajRunde();
-                if (CzyKlik)
-                {
-                    CzyKlik = false;
-                    RozegrajRunde();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -48,8 +45,14 @@ namespace Makao
 
         void RozegrajRunde()
         {
+            //dobieranie do talii gracza jednej karty
+            if (CzyKlik)
+            {
+                CzyKlik = false;
+                TaliaG = stos.DobierzDo(TaliaG);
+            }
+
             Sprawdz sprawdz = new Sprawdz();
-            int ZeStosu = stos.DobierzInt();
             bool wygrana = false;
             int rozmiarG = 0;
             int rozmiarP1 = 0;
@@ -57,29 +60,29 @@ namespace Makao
 
             Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
             //gracz
-            //dobieranie do talii gracza jednej karty
-            TaliaG = stos.DobierzDo(TaliaG);
+            
+            
             int[] GMoze = sprawdz.KtoreKarty(ZeStosu, TaliaG);
             rozmiarG = GMoze.Length;
-            Skrol.Text += "\nWszystkie karty w ręcę: ";
+            Skrol.Text = "\nWszystkie karty w ręcę: ";
             for (int i = 0; i < TaliaG.Length; i++)
             {
-                Skrol.Text += stos.IntNaString(TaliaG[i]) + " - ";
+                Skrol.Text = stos.IntNaString(TaliaG[i]) + " - ";
             }
-            Czwarty.Text += "\nMożna zagrać: ";
+            Czwarty.Text = "\nMożna zagrać: ";
             for (int i = 0; i < GMoze.Length; i++)
             {
-                Czwarty.Text += stos.IntNaString(GMoze[i]) + " - ";
+                Czwarty.Text = stos.IntNaString(GMoze[i]) + " - ";
             }
 
-            Trzeci.Text += "\nliczba kart gracza, które można położyć: " + rozmiarG;
+            Trzeci.Text = "\nliczba kart gracza, które można położyć: " + rozmiarG;
 
             
 
             //przeciwnik1
             int[] P1Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
             rozmiarP1 = TaliaP1.Length;
-            Pierwszy.Text += "\nliczba kart Przeciwnika 1: " + rozmiarP1;
+            Pierwszy.Text = "\nliczba kart Przeciwnika 1: " + rozmiarP1;
 
 
 
@@ -87,15 +90,20 @@ namespace Makao
             //PRZECIWNIK2
             int[] P2Moze = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
             rozmiarP2 = TaliaP2.Length;
-            Drugi.Text += "\nliczba kart Przeciwnika 2: " + rozmiarP2;
+            Drugi.Text = "\nliczba kart Przeciwnika 2: " + rozmiarP2;
 
             //koniec pętli
             wygrana = (TaliaG.Length == 0 || TaliaP1.Length == 0 || TaliaP2.Length == 0);
 
         }
+        void Zuzyte()
+        {
+            zuzyte.Wstaw(ZeStosu);
+        }
         void Dob_Click(object sender, RoutedEventArgs e)
         {
             CzyKlik = true;
+            RozegrajRunde();
         }
 
     }
