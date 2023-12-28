@@ -32,10 +32,11 @@
                 VerticalAlignment="Top" 
                 Width="110"
                 Cursor="Hand"
+                Click="PolozPierwszaKarte"
                 />
         <TextBlock  Name ="Obecna" TextAlignment="Center" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Height="118" Margin="51,41,0,0" TextWrapping="Wrap" Text="Obecna Karta
                  " VerticalAlignment="Top" Width="163" />
-        <TextBlock Name ="Skrol" HorizontalAlignment="Left" Height="118" Margin="245,41,0,0" VerticalAlignment="Top" Width="155" TextWrapping="Wrap" />
+        <TextBlock Name ="Skrol" HorizontalAlignment="Left" Height="162" Margin="245,41,0,0" VerticalAlignment="Top" Width="289" TextWrapping="Wrap" />
         <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Height="26" Margin="245,10,0,0" FontFamily="Fira Sans" FontSize="15" FontWeight="Bold"  TextWrapping="Wrap" Text="Twoje Karty" VerticalAlignment="Top" Width="155" />
         <TextBlock Name="Pierwszy" HorizontalAlignment="Left" Height="46" Margin="51,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold" />
         <TextBlock Name="Drugi" HorizontalAlignment="Left" Height="44" Margin="51,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>

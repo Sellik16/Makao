@@ -126,6 +126,47 @@ namespace Makao
             }
             
             }
+        void PolozPierwszaKarte(object sender, RoutedEventArgs e)
+        {
+            Sprawdz sprawdz = new Sprawdz();
 
+            
+            int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
+
+            if (kartyDoZagr.Length > 0)
+            {
+                int kartaDoPol = kartyDoZagr[0]; 
+
+               
+                TaliaG = TaliaG.Where(k => k != kartaDoPol).ToArray();
+
+                ZeStosu = kartaDoPol;
+
+                
+                Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
+
+              
+                Skrol.Text = "\nWszystkie karty w ręce: ";
+                for (int i = 0; i < TaliaG.Length; i++)
+                {
+                    Skrol.Text += stos.IntNaString(TaliaG[i]) + " - ";
+                }
+
+             
+                kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
+                Czwarty.Text = "\nMożna zagrać: ";
+                for (int i = 0; i < kartyDoZagr.Length; i++)
+                {
+                    Czwarty.Text += stos.IntNaString(kartyDoZagr[i]) + " - ";
+                }
+
+             
+                Trzeci.Text = "\nliczba kart gracza, które można położyć: " + TaliaG.Length;
+            }
+            else
+            {
+             
+            }
+        }
     }
 }
