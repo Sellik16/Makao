@@ -10,6 +10,8 @@ namespace Makao
         //wyświetlanie pierwszego asa w tali
 
         internal bool CzyKlik = false;
+        internal bool Kladz = false;
+        internal bool Dobiez = false;
         public Talia talia = new Talia();
         public Stos stos = new Stos();
         public Stos zuzyte = new Stos();
@@ -45,15 +47,42 @@ namespace Makao
 
         void RozegrajRunde()
         {
-
+            Sprawdz sprawdz = new Sprawdz();
             //dobieranie do talii gracza jednej karty
+            if (Kladz)
+            {
+                int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
+
+                if (kartyDoZagr.Length > 0)
+                {
+                    int kartaDoPol = kartyDoZagr[0];
+
+
+                    TaliaG = TaliaG.Where(k => k != kartaDoPol).ToArray();
+
+                    zuzyte.Wstaw(ZeStosu);
+                    ZeStosu = kartaDoPol;
+
+                    
+                }
+                else
+                {
+
+                }
+                Kladz = false;
+            }
+            if (Dobiez)
+            {
+                TaliaG = stos.DobierzDo(TaliaG);
+                Dobiez = false;
+            }
             if (CzyKlik)
             {
                 CzyKlik = false;
-                TaliaG = stos.DobierzDo(TaliaG);
+                
             }
 
-            Sprawdz sprawdz = new Sprawdz();
+            
             bool wygrana = false;
             int rozmiarG = 0;
             int rozmiarP1 = 0;
@@ -117,56 +146,28 @@ namespace Makao
             {
                 stos.Podejrzyj();
                 CzyKlik = true;
+                Dobiez = true;
                 RozegrajRunde();
 
             }
             catch (Exception ex) 
             { 
-                Remis();
+                try
+                {
+                    zuzyte.Tasuj();
+                    stos = zuzyte;
+                }
+                catch { Remis(); }
             }
             
-            }
+        }
         void PolozPierwszaKarte(object sender, RoutedEventArgs e)
         {
-            Sprawdz sprawdz = new Sprawdz();
-
             
-            int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
-
-            if (kartyDoZagr.Length > 0)
-            {
-                int kartaDoPol = kartyDoZagr[0]; 
-
-               
-                TaliaG = TaliaG.Where(k => k != kartaDoPol).ToArray();
-
-                ZeStosu = kartaDoPol;
-
-                
-                Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
-
-              
-                Skrol.Text = "\nWszystkie karty w ręce: ";
-                for (int i = 0; i < TaliaG.Length; i++)
-                {
-                    Skrol.Text += stos.IntNaString(TaliaG[i]) + " - ";
-                }
-
-             
-                kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
-                Czwarty.Text = "\nMożna zagrać: ";
-                for (int i = 0; i < kartyDoZagr.Length; i++)
-                {
-                    Czwarty.Text += stos.IntNaString(kartyDoZagr[i]) + " - ";
-                }
-
-             
-                Trzeci.Text = "\nliczba kart gracza, które można położyć: " + TaliaG.Length;
-            }
-            else
-            {
-             
-            }
+            CzyKlik = true;
+            Kladz = true;
+            RozegrajRunde();            
+            
         }
     }
 }
