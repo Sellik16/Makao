@@ -30,27 +30,27 @@ namespace Makao
         public int[] KtoreKarty(int Stos, int[] Reka)
         {
             int j = 0;
-
-            for (int i = 0; i < Reka.Length; i++)
-            {
-                bool CzyMozna = SprawdzKarte(Stos, Reka[i]);
-                if (CzyMozna)
+                for (int i = 0; i < Reka.Length; i++)
                 {
+                    
+                    if (SprawdzKarte(Stos, Reka[i]))
+                    {
+                        j++;
+                    }
+                }
+                int[] Mozna = new int[j];
+                j = 0;
+                for (int i = 0; i < Reka.Length; i++)
+                {
+                    
+                    if (SprawdzKarte(Stos, Reka[i]))
+                    {
+                        Mozna[j] = Reka[i];
                     j++;
+                    }
                 }
-            }
-            int[] Mozna = new int[j];
-            j = 0;
-            for (int i = 0; i < Reka.Length; i++)
-            {
-                bool CzyMozna = SprawdzKarte(Stos, Reka[i]);
-                if (CzyMozna)
-                {
-                    Mozna[j] = Reka[i];
-                }
-            }
-            return Mozna;
-
+                return Mozna;
+            
         }
         
     }

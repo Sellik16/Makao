@@ -24,7 +24,7 @@ namespace Makao
         public MainWindow()
         {
             InitializeComponent();
-
+            
             try
             {
                 InicjalizujRundy();
@@ -49,8 +49,10 @@ namespace Makao
         {
 
             //dobieranie do talii gracza jednej karty
+            
             int[] p1t = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
             int[] p2t = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
+
             int p1 = p1t.Length;
             int p2 = p2t.Length;
             if (Kladz)
@@ -68,26 +70,22 @@ namespace Makao
             {
                 if (p1 > 0)
                 {
-
                     ZagrajKarte(TaliaP1);
                 }
                 else
                 {
                     TaliaP1 = stos.DobierzDo(TaliaP1);
-
                 }
 
                 if (p2 > 0)
                 {
                     ZagrajKarte(TaliaP2);
-
                 }
                 else
                 {
                     TaliaP2 = stos.DobierzDo(TaliaP2);
-
                 }
-                CzyKlik = false;                
+                CzyKlik = false;
             }
 
             
