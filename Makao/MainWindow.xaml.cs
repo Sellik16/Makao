@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -68,27 +69,75 @@ namespace Makao
             }
             if (CzyKlik)
             {
-                if (p1 > 0)
+                Szosty.Text = "";
+                if (TaliaG.Length == 0)
                 {
-                    ZagrajKarte(ref TaliaP1);
-                }
-                else
-                {
-                    TaliaP1 = stos.DobierzDo(TaliaP1);
+                    MessageBox.Show("Wygrałeś grę!");
+                    this.Close();
+
                 }
 
-                if (p2 > 0)
+                else if (TaliaP1.Length == 0)
                 {
-                    ZagrajKarte(ref TaliaP2);
+                    MessageBox.Show("Wygrał Przeciwnik 1!");
+                    this.Close();
+
                 }
+
+                else if (TaliaP2.Length == 0)
+                {
+                    MessageBox.Show("Wygrał Przeciwnik 2!");
+                    this.Close();
+
+                }
+
                 else
                 {
-                    TaliaP2 = stos.DobierzDo(TaliaP2);
+                    if (TaliaG.Length == 1)
+                    {
+                        Szosty.Text = "TY: Makao";
+                    }
+                    else if (TaliaP1.Length == 1)
+                    {
+                        Szosty.Text = "Przeciwnik 1: Makao";
+                    }
+                    else if (TaliaP2.Length == 1)
+                    {
+                        Szosty.Text = "Przeciwnik 2: Makao";
+                    }
+                    
+                        if (p1 > 0)
+                        {
+                            ZagrajKarte(ref TaliaP1);
+                            Piaty.Text = "Przeciwnik jeden zagrywa kartę";
+                        }
+                        else
+                        {
+                            TaliaP1 = stos.DobierzDo(TaliaP1);
+                            Piaty.Text = "Przeciwnik jeden dobiera kartę";
+
+                        }
+
+
+                        if (p2 > 0)
+                        {
+                            ZagrajKarte(ref TaliaP2);
+                            Piaty.Text += "\n\nPrzeciwnik dwa zagrywa kartę";
+
+                        }
+                        else
+                        {
+                            TaliaP2 = stos.DobierzDo(TaliaP2);
+                            Piaty.Text += "\n\nPrzeciwnik dwa dobiera kartę";
+
+                        }
+                    
+                    
                 }
-                CzyKlik = false;
+
             }
 
-            
+
             bool wygrana = false;
             int rozmiarG = 0;
             int rozmiarP1 = 0;

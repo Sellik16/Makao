@@ -42,7 +42,7 @@
         <TextBlock Name="Drugi" HorizontalAlignment="Left" Height="44" Margin="51,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
         <TextBlock Name="Trzeci" HorizontalAlignment="Left" Height="44" Margin="51,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
         <TextBlock Name="Czwarty" HorizontalAlignment="Left" Height="44" Margin="51,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
-        <TextBlock Name="Piąty" HorizontalAlignment="Left" Height="67" Margin="479,357,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
-        <TextBlock Name="Szósty" HorizontalAlignment="Left" Height="154" Margin="479,180,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Piaty" HorizontalAlignment="Left" Height="67" Margin="470,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Szosty" HorizontalAlignment="Left" Height="154" Margin="472,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
     </Grid>
 </Window>
