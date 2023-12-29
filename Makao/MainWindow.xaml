@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Makao" Height="450" Width="800">
     <Grid>
-        
+
         <Button Name="Dob" 
                 Content="Dobierz Kartę" 
                 FontFamily="Fira Sans" 
@@ -42,5 +42,7 @@
         <TextBlock Name="Drugi" HorizontalAlignment="Left" Height="44" Margin="51,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
         <TextBlock Name="Trzeci" HorizontalAlignment="Left" Height="44" Margin="51,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
         <TextBlock Name="Czwarty" HorizontalAlignment="Left" Height="44" Margin="51,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Piąty" HorizontalAlignment="Left" Height="67" Margin="479,357,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
+        <TextBlock Name="Szósty" HorizontalAlignment="Left" Height="154" Margin="479,180,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="294" TextAlignment="Center" FontFamily="Fira Sans" FontSize="13" FontWeight="Bold"/>
     </Grid>
 </Window>
