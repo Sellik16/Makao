@@ -87,7 +87,7 @@ namespace Makao
                 else if (TaliaP2.Length == 0)
                 {
                     MessageBox.Show("Wygrał Przeciwnik 2!");
-                    this.Close();
+                        this.Close();
 
                 }
 
@@ -109,9 +109,9 @@ namespace Makao
                         if (p1 > 0)
                         {
                             ZagrajKarte(ref TaliaP1);
-                            Piaty.Text = "Przeciwnik jeden zagrywa kartę";
-                        }
-                        else
+                        Piaty.Text = string.Format("Przeciwnik jeden zagrywa kartę {0}", stos.IntNaString(ZeStosu));
+                    }
+                    else
                         {
                             TaliaP1 = stos.DobierzDo(TaliaP1);
                             Piaty.Text = "Przeciwnik jeden dobiera kartę";
@@ -122,10 +122,10 @@ namespace Makao
                         if (p2 > 0)
                         {
                             ZagrajKarte(ref TaliaP2);
-                            Piaty.Text += "\n\nPrzeciwnik dwa zagrywa kartę";
+                        Piaty.Text += string.Format("\n\nPrzeciwnik dwa zagrywa kartę {0}", stos.IntNaString(ZeStosu));
 
-                        }
-                        else
+                    }
+                    else
                         {
                             TaliaP2 = stos.DobierzDo(TaliaP2);
                             Piaty.Text += "\n\nPrzeciwnik dwa dobiera kartę";
