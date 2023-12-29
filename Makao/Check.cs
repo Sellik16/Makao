@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 //ten plik w dużym stopniu będzie odwoływać się do Shuffle.cs i to właśnie tam znajduje się większość klas i funkcji które są tutaj używane
 namespace Makao
 {
-    class Sprawdz
+    public class Sprawdz
     {
         //będzie trzeba jakoś pobrać wartości kart z ręki i karty ze stosu
         Talia Talia = new Talia();
-        Stos Stosik = new Stos();
 
+        public Sprawdz()
+        {
+            Stos Stosik = new Stos();
+        }
         public bool SprawdzKarte(int Stos , int Reka)
             {
             bool CzyMozna = false;

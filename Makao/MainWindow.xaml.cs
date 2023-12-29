@@ -16,7 +16,7 @@ namespace Makao
         public Stos stos = new Stos();
         public Stos zuzyte = new Stos();
         public Tura tura = new Tura();
-
+        public Sprawdz sprawdz = new Sprawdz();
         int[] TaliaG;
         int[] TaliaP1;
         int[] TaliaP2;
@@ -47,28 +47,16 @@ namespace Makao
 
         void RozegrajRunde()
         {
-            Sprawdz sprawdz = new Sprawdz();
+
             //dobieranie do talii gracza jednej karty
+            int[] p1t = sprawdz.KtoreKarty(ZeStosu, TaliaP1);
+            int[] p2t = sprawdz.KtoreKarty(ZeStosu, TaliaP2);
+            int p1 = p1t.Length;
+            int p2 = p2t.Length;
             if (Kladz)
             {
-                int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, TaliaG);
 
-                if (kartyDoZagr.Length > 0)
-                {
-                    int kartaDoPol = kartyDoZagr[0];
-
-
-                    TaliaG = TaliaG.Where(k => k != kartaDoPol).ToArray();
-
-                    zuzyte.Wstaw(ZeStosu);
-                    ZeStosu = kartaDoPol;
-
-                    
-                }
-                else
-                {
-
-                }
+                ZagrajKarte(TaliaG);
                 Kladz = false;
             }
             if (Dobiez)
@@ -78,8 +66,28 @@ namespace Makao
             }
             if (CzyKlik)
             {
-                CzyKlik = false;
-                
+                if (p1 > 0)
+                {
+
+                    ZagrajKarte(TaliaP1);
+                }
+                else
+                {
+                    TaliaP1 = stos.DobierzDo(TaliaP1);
+
+                }
+
+                if (p2 > 0)
+                {
+                    ZagrajKarte(TaliaP2);
+
+                }
+                else
+                {
+                    TaliaP2 = stos.DobierzDo(TaliaP2);
+
+                }
+                CzyKlik = false;                
             }
 
             
@@ -88,7 +96,7 @@ namespace Makao
             int rozmiarP1 = 0;
             int rozmiarP2 = 0;
 
-            Obecna.Text = "Karta na stosie: \n" + stos.IntNaString(ZeStosu);
+            Obecna.Text = p1 +" "+ p2 + "\nKarta na stosie: \n" + stos.IntNaString(ZeStosu);
             //gracz
             
             
@@ -105,7 +113,7 @@ namespace Makao
                 Czwarty.Text += stos.IntNaString(GMoze[i]) + " - ";
             }
 
-            Trzeci.Text = "\nliczba kart gracza, które można położyć: " + TaliaG.Length;
+            Trzeci.Text = "\nliczba kart gracza, które można położyć: " + GMoze.Length;
 
             
 
@@ -163,11 +171,25 @@ namespace Makao
         }
         void PolozPierwszaKarte(object sender, RoutedEventArgs e)
         {
+            if (sprawdz.KtoreKarty(ZeStosu, TaliaG).Length > 0)
+            {
+                CzyKlik = true;
+                Kladz = true;
+                RozegrajRunde();
+            }
             
-            CzyKlik = true;
-            Kladz = true;
-            RozegrajRunde();            
-            
+        }
+        void ZagrajKarte(int[] Reka)
+        {
+            int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, Reka);
+
+            if (kartyDoZagr.Length > 0)
+            {
+                int kartaDoPol = kartyDoZagr[0];
+                Reka = Reka.Where(k => k != kartaDoPol).ToArray();
+                zuzyte.Wstaw(ZeStosu);
+                ZeStosu = kartaDoPol;
+            }
         }
     }
 }
