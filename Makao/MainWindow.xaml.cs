@@ -58,7 +58,7 @@ namespace Makao
             if (Kladz)
             {
 
-                ZagrajKarte(TaliaG);
+                ZagrajKarte(ref TaliaG);
                 Kladz = false;
             }
             if (Dobiez)
@@ -70,7 +70,7 @@ namespace Makao
             {
                 if (p1 > 0)
                 {
-                    ZagrajKarte(TaliaP1);
+                    ZagrajKarte(ref TaliaP1);
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace Makao
 
                 if (p2 > 0)
                 {
-                    ZagrajKarte(TaliaP2);
+                    ZagrajKarte(ref TaliaP2);
                 }
                 else
                 {
@@ -177,7 +177,7 @@ namespace Makao
             }
             
         }
-        void ZagrajKarte(int[] Reka)
+        void ZagrajKarte(ref int[] Reka)
         {
             int[] kartyDoZagr = sprawdz.KtoreKarty(ZeStosu, Reka);
 
